@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionReusableView" id="U6b-Vx-4bR" customClass="HeaderCollectionReusableView" customModule="Alajo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="69"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-oG-lvH">
+                    <rect key="frame" x="24" y="0.0" width="60" height="29"/>
+                    <color key="tintColor" name="text"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    <color key="textColor" name="text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="right" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5k-jW-Sif">
+                    <rect key="frame" x="217" y="6" width="64" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="7PJ-dl-fwj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                    <color key="tintColor" name="text"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="See more"/>
+                    <connections>
+                        <action selector="moreAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="729-5D-r9L"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" name="brand"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="y5k-jW-Sif" secondAttribute="trailing" constant="24" id="RcV-7u-UDE"/>
+                <constraint firstItem="D7T-oG-lvH" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Z5n-fh-bxv"/>
+                <constraint firstItem="y5k-jW-Sif" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="6" id="sAv-gW-PJi"/>
+                <constraint firstItem="D7T-oG-lvH" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="24" id="ugF-rM-36F"/>
+            </constraints>
+            <connections>
+                <outlet property="moreButton" destination="y5k-jW-Sif" id="Rqp-6l-mur"/>
+                <outlet property="titleMovie" destination="D7T-oG-lvH" id="irk-wm-l9m"/>
+            </connections>
+            <point key="canvasLocation" x="109.16030534351144" y="26.408450704225352"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <namedColor name="brand">
+            <color red="1" green="0.10199999809265137" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.063000001013278961" green="0.071000002324581146" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -5,6 +5,7 @@
 //  Created by God's on 3/31/24.
 //
 
+
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -13,11 +14,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // Create a new UIWindow with the given scene
+        let newWindow = UIWindow(windowScene: windowScene)
+        
+        // Create your new root view controller
+        let vc = UIStoryboard.init(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController ?? TabBarController()
+        // Set the new root view controller
+        let navigationController = UINavigationController(rootViewController: vc)
+        newWindow.rootViewController = navigationController
+    
+        let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZGMxZGI2NDBkYTE0ZjA5OTAzZmM5NzlkYmNjYmU3ZSIsInN1YiI6IjY1ZGNhMmE0MDNiZjg0MDE2MWFlZGE3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZOO3t3M_nH-awAjBucsK5VhYzTF0WiAN2PPtKN7tDHI"
+    
+        let data = token.data(using: .utf8)!
+        let safeToken = KeychainHelper.saveData(data: data, ForService: "token")
+        
+        if safeToken {
+            print("token saved")
+        } else {
+            print("token not saved")
+        }
+        
+//        if UserDefaultsHelper.getBool(key: Constant.UD_IS_LOGIN_KEY) {
+//                    let vc = UIStoryboard.init(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "QuestionsViewController") as? QuestionsViewController ?? QuestionsViewController()
+//                    // Set the new root view controller
+//                    let navigationController = UINavigationController(rootViewController: vc)
+//        //            navigationController.popToRootViewController(animated: true)
+//                    newWindow.rootViewController = navigationController
+//                } else {
+//                    let vc = UIStoryboard.init(name: "Auth", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController ?? LoginViewController()
+//                    let navigationController = UINavigationController(rootViewController: vc)
+//                    // Set the new root view controller
+//                    newWindow.rootViewController = navigationController
+//                }
+            
+            // Make the window visible
+            window = newWindow
+            window?.makeKeyAndVisible()
+        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
