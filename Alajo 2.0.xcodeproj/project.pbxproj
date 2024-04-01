@@ -40,8 +40,8 @@
 		04AF2A1D2BB9667E009E4F3B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2A1B2BB9667E009E4F3B /* MovieCell.swift */; };
 		04AF2A202BB96689009E4F3B /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF2A1E2BB96689009E4F3B /* MovieCollectionViewCell.xib */; };
 		04AF2A212BB96689009E4F3B /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2A1F2BB96689009E4F3B /* MovieCollectionViewCell.swift */; };
-		04AF2A252BB966C5009E4F3B /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF2A232BB966C4009E4F3B /* HeaderCollectionReusableView.xib */; };
-		04AF2A262BB966C5009E4F3B /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2A242BB966C4009E4F3B /* HeaderCollectionReusableView.swift */; };
+		04AF2A252BB966C5009E4F3B /* MovieCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF2A232BB966C4009E4F3B /* MovieCollectionHeaderView.xib */; };
+		04AF2A262BB966C5009E4F3B /* MovieCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2A242BB966C4009E4F3B /* MovieCollectionHeaderView.swift */; };
 		04AF2A282BB96854009E4F3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2A272BB96854009E4F3B /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +79,8 @@
 		04AF2A1B2BB9667E009E4F3B /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		04AF2A1E2BB96689009E4F3B /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		04AF2A1F2BB96689009E4F3B /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
-		04AF2A232BB966C4009E4F3B /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
-		04AF2A242BB966C4009E4F3B /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		04AF2A232BB966C4009E4F3B /* MovieCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionHeaderView.xib; sourceTree = "<group>"; };
+		04AF2A242BB966C4009E4F3B /* MovieCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionHeaderView.swift; sourceTree = "<group>"; };
 		04AF2A272BB96854009E4F3B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../Alajo/Alajo/AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,8 +293,8 @@
 		04AF2A222BB966B5009E4F3B /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				04AF2A242BB966C4009E4F3B /* HeaderCollectionReusableView.swift */,
-				04AF2A232BB966C4009E4F3B /* HeaderCollectionReusableView.xib */,
+				04AF2A242BB966C4009E4F3B /* MovieCollectionHeaderView.swift */,
+				04AF2A232BB966C4009E4F3B /* MovieCollectionHeaderView.xib */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 			files = (
 				04AF2A202BB96689009E4F3B /* MovieCollectionViewCell.xib in Resources */,
 				04AF29EC2BB96077009E4F3B /* Home.storyboard in Resources */,
-				04AF2A252BB966C5009E4F3B /* HeaderCollectionReusableView.xib in Resources */,
+				04AF2A252BB966C5009E4F3B /* MovieCollectionHeaderView.xib in Resources */,
 				04AF29CF2BB95F22009E4F3B /* LaunchScreen.storyboard in Resources */,
 				04AF2A1C2BB9667E009E4F3B /* MovieCell.xib in Resources */,
 				04AF29CC2BB95F22009E4F3B /* Assets.xcassets in Resources */,
@@ -380,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AF2A262BB966C5009E4F3B /* HeaderCollectionReusableView.swift in Sources */,
+				04AF2A262BB966C5009E4F3B /* MovieCollectionHeaderView.swift in Sources */,
 				04AF2A1D2BB9667E009E4F3B /* MovieCell.swift in Sources */,
 				04AF2A0E2BB96289009E4F3B /* FavoriteViewController.swift in Sources */,
 				04AF2A092BB9627C009E4F3B /* HomeViewModel.swift in Sources */,

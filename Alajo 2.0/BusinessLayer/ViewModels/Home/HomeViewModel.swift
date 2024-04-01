@@ -24,40 +24,32 @@ final class HomeViewModel {
     var errorCallback: ((String) -> Void)?
     var selectedMovie: MovieCellProtocol?
     
-    var headerType: HeaderType = .today
-    
-    func setHeader(index: Int) -> HeaderType {
-        switch index {
-        case 0:
-            getTodayMovieList()
-            guard let list = todayList else {return .today}
-            movieList = list
-            headerType = .today
-        case 1:
-            getThisWeekMovieList()
-            guard let list = weekList else {return .thisWeek}
-            movieList = list
-            headerType = .thisWeek
-        case 2:
-            getPopularMovieList()
-            guard let list = popularList else {return .popular}
-            movieList = list
-            headerType = .popular
-        case 3:
-            getTopRatedMovieList()
-            guard let list = ratedList else {return .topRated}
-            movieList = list
-            headerType = .topRated
-        default:
-            headerType = .today
-            
+    func getMovieForType(type: SegmentType) {
+            switch type {
+            case .TopRated:
+                getTopRatedMovieList()
+                print("movieList")
+            case .ThisWeek:
+                getThisWeekMovieList()
+                print("getThisWeekMovieList")
+            case .Popular:
+                getPopularMovieList()
+                print("popularList")
+            case .Today:
+                getTodayMovieList()
+                print("getTodayMovieList")
+            }
         }
-        return headerType
-    }
+    
+    
     
     func getMovieList() -> [MovieCellProtocol] {
         return movieList
     }
+    
+    func getMoviesCount() -> Int{
+            return movieList.count
+        }
     
     // MARK: Network
     
