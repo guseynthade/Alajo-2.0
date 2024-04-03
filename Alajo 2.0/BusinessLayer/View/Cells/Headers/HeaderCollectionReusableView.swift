@@ -18,12 +18,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet private weak var segmentView: UISegmentedControl!
     @IBOutlet private weak var titleLabel: UILabel!
-    
-    @IBAction func segmentAction(_ sender: Any) {
+
+    @IBAction func segmentAction(_ sender: UISegmentedControl) {
         setSegmentType()
     }
-    
-
     var type: SegmentType = .Today
     var segmentCallBack: ((SegmentType) ->())?
     var moreCallBack: ((SegmentType) -> ())?
@@ -56,6 +54,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
             segmentCallBack?(.Today)
         case 1:
             segmentCallBack?(.ThisWeek)
+            print(#function)
         case 2:
             segmentCallBack?(.Popular)
         case 3:

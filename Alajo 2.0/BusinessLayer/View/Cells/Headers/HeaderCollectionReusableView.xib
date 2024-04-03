@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-oG-lvH">
-                    <rect key="frame" x="24" y="0.0" width="60" height="29"/>
+                    <rect key="frame" x="8" y="0.0" width="60" height="29"/>
                     <color key="tintColor" name="text"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3GN-Vg-7hL">
-                    <rect key="frame" x="24" y="45" width="422" height="41"/>
+                    <rect key="frame" x="8" y="45" width="454" height="41"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="VFr-VY-Yee"/>
@@ -36,17 +36,20 @@
                     </segments>
                     <color key="tintColor" systemColor="systemPinkColor"/>
                     <color key="selectedSegmentTintColor" name="brand"/>
+                    <connections>
+                        <action selector="segmentAction:" destination="U6b-Vx-4bR" eventType="valueChanged" id="bvP-jr-9gB"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" name="brand"/>
             <constraints>
-                <constraint firstItem="3GN-Vg-7hL" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="24" id="8OT-1G-tcY"/>
+                <constraint firstItem="3GN-Vg-7hL" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="8OT-1G-tcY"/>
                 <constraint firstItem="D7T-oG-lvH" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Z5n-fh-bxv"/>
-                <constraint firstAttribute="trailing" secondItem="3GN-Vg-7hL" secondAttribute="trailing" constant="24" id="chf-U3-DcZ"/>
+                <constraint firstAttribute="trailing" secondItem="3GN-Vg-7hL" secondAttribute="trailing" constant="8" id="chf-U3-DcZ"/>
                 <constraint firstItem="3GN-Vg-7hL" firstAttribute="top" secondItem="D7T-oG-lvH" secondAttribute="bottom" constant="16" id="noe-i1-UmR"/>
-                <constraint firstItem="D7T-oG-lvH" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="24" id="ugF-rM-36F"/>
+                <constraint firstItem="D7T-oG-lvH" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="8" id="ugF-rM-36F"/>
             </constraints>
             <connections>
                 <outlet property="segmentView" destination="3GN-Vg-7hL" id="xL2-fL-fOk"/>

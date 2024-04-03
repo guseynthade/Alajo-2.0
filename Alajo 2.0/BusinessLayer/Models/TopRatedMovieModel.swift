@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - TopRatedMovieModel
 struct TopRatedMovieModel: Codable {
-    let page: Int
-    let results: [RatedResult]
+    let page: Int?
+    let results: [RatedResult]?
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {

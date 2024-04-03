@@ -14,11 +14,11 @@ protocol HomeProtocol: AnyObject {
 
 final class HomeViewModel {
     
-    private var popularList: [PopularResult]?
-    private var todayList: [TodayResult]?
-    private var weekList: [WeekResult]?
-    private var ratedList: [RatedResult]?
-    private var searchList: [SearchResult]?
+    private var popularList: PopularMovieModel?
+    private var todayList: TodayMovieModel?
+    private var weekList: ThisWeekMovieModel?
+    private var ratedList: TopRatedMovieModel?
+    private var searchList: SearchModel?
     private var movieList: [MovieCellProtocol] = []
     
     var successCallback: (() -> Void)?
@@ -60,8 +60,9 @@ final class HomeViewModel {
             
             if let errorString = errorString {
                 self.errorCallback?(errorString)
-            } else if let responseData = responseData?.results {
+            } else if let responseData = responseData {
                 self.popularList = responseData
+                self.movieList = responseData.results ?? []
                 self.successCallback?()
             }
         }
@@ -73,8 +74,9 @@ final class HomeViewModel {
             
             if let errorString = errorString {
                 self.errorCallback?(errorString)
-            } else if let responseData = responseData?.results {
+            } else if let responseData = responseData {
                 self.todayList = responseData
+                self.movieList = responseData.results ?? []
                 self.successCallback?()
             }
         }
@@ -86,8 +88,9 @@ final class HomeViewModel {
             
             if let errorString = errorString {
                 self.errorCallback?(errorString)
-            } else if let responseData = responseData?.results {
+            } else if let responseData = responseData {
                 self.weekList = responseData
+                self.movieList = responseData.results ?? []
                 self.successCallback?()
             }
         }
@@ -99,8 +102,9 @@ final class HomeViewModel {
             
             if let errorString = errorString {
                 self.errorCallback?(errorString)
-            } else if let responseData = responseData?.results {
+            } else if let responseData = responseData {
                 self.ratedList = responseData
+                self.movieList = responseData.results ?? []
                 self.successCallback?()
             }
         }
@@ -112,8 +116,9 @@ final class HomeViewModel {
             
             if let errorString = errorString {
                 self.errorCallback?(errorString)
-            } else if let responseData = responseData?.results {
+            } else if let responseData = responseData {
                 self.searchList = responseData
+                self.movieList = responseData.results ?? []
                 self.successCallback?()
             }
         }

@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - SearchModel
 struct SearchModel: Codable {
-    let page: Int
-    let results: [SearchResult]
+    let page: Int?
+    let results: [SearchResult]?
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {

@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - ThisWeekMovieModel
 struct ThisWeekMovieModel: Codable {
-    let page: Int
-    let results: [WeekResult]
+    let page: Int?
+    let results: [WeekResult]?
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {

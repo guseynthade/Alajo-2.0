@@ -36,13 +36,14 @@ class HomeViewController: UIViewController {
         mainCollection.delegate = self
         mainCollection.dataSource = self
         mainCollection.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
-        mainCollection.registerNib(with: "MovieColl")
+        mainCollection.registerNib(with: "MovieCell")
     }
     
     fileprivate func confViewModel() {
         viewModel.successCallback = { [weak self] in
             guard let self = self else {return}
             print("success")
+            self.reloadCollectionView()
         }
         
         viewModel.errorCallback = { [weak self] errorString in
@@ -53,8 +54,6 @@ class HomeViewController: UIViewController {
     
     fileprivate func segmentAction(type: SegmentType) {
             viewModel.getMovieForType(type: type)
-            
-            //burada type gore backende request atilacaq
         }
     
     fileprivate func showMoviewViewController() {
@@ -112,6 +111,7 @@ extension HomeViewController: UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        
         return CGSize(width: collectionView.bounds.width, height: 100)
     }
     
@@ -144,7 +144,7 @@ extension HomeViewController: UICollectionViewDataSource,
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width:collectionView.frame.width/3, height: collectionView.frame.height * 0.4)
+            return CGSize(width: collectionView.frame.width / 2 , height: collectionView.frame.height * 0.5)
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = viewModel.getMovieList()[indexPath.row]
@@ -156,7 +156,6 @@ extension HomeViewController: UICollectionViewDataSource,
 extension HomeViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else {return}
-        // burada bir search requesti atiriq
         viewModel.getSearchList(text: text)
     }
 }

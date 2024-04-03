@@ -18,23 +18,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="top" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-mg-flP">
-                        <rect key="frame" x="2" y="0.0" width="349" height="532"/>
+                        <rect key="frame" x="8" y="0.0" width="337" height="516"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-0t-vvf">
-                                <rect key="frame" x="0.0" y="0.0" width="349" height="486.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="337" height="470.33333333333331"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-d1-c3D">
-                                <rect key="frame" x="0.0" y="494.33333333333331" width="349" height="37.666666666666686"/>
+                                <rect key="frame" x="0.0" y="478.33333333333331" width="337" height="37.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-t2-4KK">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="19.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="19.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-7S-pbr">
-                                        <rect key="frame" x="0.0" y="23.333333333333314" width="349" height="14.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="23.333333333333371" width="337" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,9 +48,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="hTn-mg-flP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7UM-pu-WDz"/>
-                <constraint firstAttribute="trailing" secondItem="hTn-mg-flP" secondAttribute="trailing" constant="2" id="IRK-bK-uDJ"/>
-                <constraint firstAttribute="bottom" secondItem="hTn-mg-flP" secondAttribute="bottom" id="Svj-gY-Lei"/>
-                <constraint firstItem="hTn-mg-flP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="dxg-Ef-Vda"/>
+                <constraint firstAttribute="trailing" secondItem="hTn-mg-flP" secondAttribute="trailing" constant="8" id="IRK-bK-uDJ"/>
+                <constraint firstAttribute="bottom" secondItem="hTn-mg-flP" secondAttribute="bottom" constant="16" id="Nuy-zf-Wsn"/>
+                <constraint firstItem="hTn-mg-flP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="dxg-Ef-Vda"/>
             </constraints>
             <size key="customSize" width="353" height="532"/>
             <connections>
