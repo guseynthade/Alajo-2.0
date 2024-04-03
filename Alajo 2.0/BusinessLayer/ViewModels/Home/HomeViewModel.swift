@@ -20,6 +20,7 @@ final class HomeViewModel {
     private var ratedList: [RatedResult]?
     private var searchList: [SearchResult]?
     private var movieList: [MovieCellProtocol] = []
+    
     var successCallback: (() -> Void)?
     var errorCallback: ((String) -> Void)?
     var selectedMovie: MovieCellProtocol?

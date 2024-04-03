@@ -14,27 +14,27 @@ enum SegmentType: String {
     case Today
 }
 
-class MovieCollectionHeaderView: UICollectionReusableView {
+class HeaderCollectionReusableView: UICollectionReusableView {
     
-//    @IBAction func segmentAction(_ sender: Any) {
-//        setSegmentType()
-//    }
-//    
-//    @IBAction func moreAction(_ sender: Any) {
-////        print(type)
-//        
-//    }
     @IBOutlet private weak var segmentView: UISegmentedControl!
     @IBOutlet private weak var titleLabel: UILabel!
-//    @IBOutlet private weak var moreButton: UIButton!
+    
+    @IBAction func segmentAction(_ sender: Any) {
+        setSegmentType()
+    }
+    
+
     var type: SegmentType = .Today
     var segmentCallBack: ((SegmentType) ->())?
     var moreCallBack: ((SegmentType) -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        segmentView.tintColor = .black
+        segmentView.tintColor = UIColor(named: "text")
         segmentView.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         segmentView.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.label], for: .normal)
+//        segmentView.makeTransparent()
+//        segmentView.backgroundColor = UIColor.clear
     }
     
     func configureView() {
@@ -62,5 +62,15 @@ class MovieCollectionHeaderView: UICollectionReusableView {
             segmentCallBack?(.TopRated)
         default: segmentCallBack?(.Today)
         }
+    }
+}
+
+extension UISegmentedControl {
+    func makeTransparent() {
+        setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        setBackgroundImage(UIImage(), for: .highlighted, barMetrics: .default)
+        setBackgroundImage(UIImage(), for: [.highlighted, .selected], barMetrics: .default)
+        setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
 }
