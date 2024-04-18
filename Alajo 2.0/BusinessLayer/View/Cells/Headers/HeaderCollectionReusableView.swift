@@ -22,6 +22,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
         setSegmentType()
     }
+    
     var type: SegmentType = .Today
     var segmentCallBack: ((SegmentType) ->())?
     var moreCallBack: ((SegmentType) -> ())?

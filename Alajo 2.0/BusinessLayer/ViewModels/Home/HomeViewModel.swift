@@ -110,6 +110,7 @@ final class HomeViewModel {
         }
     }
     
+    
     func getSearchList(text: String) {
         SearchManager.shared.getSearchList(query: text) { [weak self] responseData, errorString in
             guard let self = self else {return}

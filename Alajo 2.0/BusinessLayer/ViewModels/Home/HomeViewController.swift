@@ -11,23 +11,62 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var sortButton: UIButton!
+    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var serchField: UITextField!
     @IBOutlet private weak var mainCollection: UICollectionView!
     
     @IBAction func searchAction() {
-        print(#function)
+        
+        hideSearchField.toggle()
+        UIView.transition(
+            with: serchField,
+            duration: 0.8,
+            options: .transitionFlipFromTop,
+            animations: { [weak self] in
+                guard let self = self else {return}
+                self.searchButton.isHidden = !self.hideSearchField
+                self.closeButton.isHidden = self.hideSearchField
+                self.serchField.isHidden = self.hideSearchField
+                self.sortButton.isHidden = !self.hideSearchField
+            })
+    }
+    
+    @IBAction func closeAction() {
+        searchButton.isHidden = hideSearchField
+        closeButton.isHidden = !hideSearchField
+        serchField.isHidden = !hideSearchField
+        sortButton.isHidden = hideSearchField
     }
     
     @IBAction func sortAction() {
         print(#function)
     }
     
+    private var hideSearchField: Bool = true
     private let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                viewModel.getPopularMovieList()
+        viewModel.getMovieForType(type: .Today)
         setupView()
+        serchField.delegate = self
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           // This method is called when the return key is pressed
+           textField.resignFirstResponder() // Hide the keyboard
+           return true
+       }
+       
+       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           // This method is called when the user taps outside the text field
+           view.endEditing(true) // Hide the keyboard
+       }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     
@@ -56,9 +95,9 @@ class HomeViewController: UIViewController {
             viewModel.getMovieForType(type: type)
         }
     
-    fileprivate func showMoviewViewController() {
+    fileprivate func showMovieViewController() {
         let vc = UIStoryboard.init(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailController") as? MovieDetailController ?? MovieDetailController()
-        vc.viewModel = viewModel
+        vc.setMovie(viewModel.selectedMovie)
         navigationController?.pushViewController(vc, animated: true)
         print(#function)
     }
@@ -144,18 +183,21 @@ extension HomeViewController: UICollectionViewDataSource,
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: collectionView.frame.width / 2 , height: collectionView.frame.height * 0.5)
+            return CGSize(width: collectionView.frame.width / 2 , height: collectionView.frame.height * 0.491)
         }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = viewModel.getMovieList()[indexPath.row]
         viewModel.selectedMovie = movie
-        showMoviewViewController()
+        showMovieViewController()
+        print(#function)
     }
 }
 
 extension HomeViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let text = textField.text else {return}
+        guard let text = serchField.text else {return}
         viewModel.getSearchList(text: text)
+        print(text)
     }
 }

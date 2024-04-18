@@ -185,10 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				04AF29F62BB961F4009E4F3B /* PopularMovieModel.swift */,
-				04AF29F72BB961F4009E4F3B /* SearchModel.swift */,
 				04AF29F42BB961F4009E4F3B /* ThisWeekMovieModel.swift */,
 				04AF29F82BB961F4009E4F3B /* TodayMovieModel.swift */,
 				04AF29F52BB961F4009E4F3B /* TopRatedMovieModel.swift */,
+				04AF29F72BB961F4009E4F3B /* SearchModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
